@@ -19,7 +19,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         imagePicker.delegate = self
     }
-    
 }
 
 extension ViewController {
