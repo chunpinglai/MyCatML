@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MyCatML" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Kw-KA-Ryi">
+                                <rect key="frame" x="87" y="328" width="240" height="240"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="8li-90-ADB"/>
+                                    <constraint firstAttribute="width" constant="240" id="hbK-5a-4ju"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z7x-wp-wL8">
+                                <rect key="frame" x="267" y="508" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Gwx-3f-iKs"/>
+                                    <constraint firstAttribute="width" constant="40" id="i3q-Zl-sZ8"/>
+                                </constraints>
+                                <color key="tintColor" red="0.40000000000000002" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="camera"/>
+                                <connections>
+                                    <action selector="photoBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WXh-ls-dcf"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u78-cn-l4Z">
+                                <rect key="frame" x="0.0" y="618" width="414" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="P9d-2r-Rtd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.50588235290000005" green="0.84705882349999995" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Z7x-wp-wL8" firstAttribute="trailing" secondItem="9Kw-KA-Ryi" secondAttribute="trailing" constant="-20" id="3p6-Ax-0aJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="u78-cn-l4Z" secondAttribute="trailing" id="8Sv-2h-COM"/>
+                            <constraint firstItem="9Kw-KA-Ryi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GlB-Bk-dUk"/>
+                            <constraint firstItem="Z7x-wp-wL8" firstAttribute="bottom" secondItem="9Kw-KA-Ryi" secondAttribute="bottom" constant="-20" id="IiO-C5-6Q8"/>
+                            <constraint firstItem="u78-cn-l4Z" firstAttribute="top" secondItem="9Kw-KA-Ryi" secondAttribute="bottom" constant="50" id="J9Y-fC-ndC"/>
+                            <constraint firstItem="u78-cn-l4Z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gtS-OQ-4rh"/>
+                            <constraint firstItem="9Kw-KA-Ryi" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="nLG-cX-9rd"/>
+                            <constraint firstItem="u78-cn-l4Z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wLX-Xe-POb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="9Kw-KA-Ryi" id="zv4-oj-7uP"/>
+                        <outlet property="isMyCat" destination="u78-cn-l4Z" id="qFk-vO-Dbb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="camera" width="30" height="30"/>
+    </resources>
+</document>
