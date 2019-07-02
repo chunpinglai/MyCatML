@@ -19,6 +19,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         imagePicker.delegate = self
     }
+    
+    func checkGalleryPermission() -> Bool {
+        return UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary)
+    }
 }
 
 extension ViewController {
@@ -27,7 +31,7 @@ extension ViewController {
     }
     
     func openGallery() {
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary){
+        if checkGalleryPermission() {
             let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
             imagePicker.allowsEditing = true
@@ -40,12 +44,18 @@ extension ViewController {
             self.present(alert, animated: true, completion: nil)
         }
     }
-
+    
     func recognition(newImage: UIImage) {
         imageView.image = newImage
-        guard let pixelBuffer = newImage.pixelBufferFromImage() else { return }
-        guard let prediction = try? imgModel.prediction(image: pixelBuffer) else { return }
-        isMyCat.text = "I think this is... \(prediction.classLabel)."
+        if let prediction = getPrediction(newImage: newImage) {
+            isMyCat.text = "I think this is... \(prediction.classLabel)."
+        }
+    }
+    
+    func getPrediction(newImage: UIImage) -> ImageClassifierOutput? {
+        guard let pixelBuffer = newImage.pixelBufferFromImage() else { return nil }
+        guard let prediction = try? imgModel.prediction(image: pixelBuffer) else { return nil }
+        return prediction
     }
     
     func resizeImg(image:UIImage) -> UIImage {

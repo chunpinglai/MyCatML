@@ -10,18 +10,32 @@ import XCTest
 @testable import MyCatML
 
 class MyCatMLTests: XCTestCase {
-
+    var vc: ViewController!
+    
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        vc = storyboard.instantiateInitialViewController() as? ViewController
     }
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testCameraPermission() {
+        let permission = vc.checkGalleryPermission()
+        XCTAssert(permission, "沒有權限")
+    }
+    
+    func testRecognizeIsMyCat() {
+        let img = UIImage.init(named: "mycat.PNG")
+        let prediction = vc.getPrediction(newImage: img!)
+        XCTAssert(prediction?.classLabel == "MyCat", "辨識錯誤")
+    }
+    
+    func testRecognizeNotMyCat() {
+        let img = UIImage.init(named: "notmycat.PNG")
+        let prediction = vc.getPrediction(newImage: img!)
+        XCTAssert(prediction?.classLabel == "NotMyCat", "辨識錯誤")
     }
 
     func testPerformanceExample() {

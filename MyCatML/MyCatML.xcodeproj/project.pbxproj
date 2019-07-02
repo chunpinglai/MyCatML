@@ -14,6 +14,10 @@
 		8C1771F022CA4840007D54E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C1771EE22CA4840007D54E0 /* LaunchScreen.storyboard */; };
 		8C1771FB22CA4840007D54E0 /* MyCatMLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1771FA22CA4840007D54E0 /* MyCatMLTests.swift */; };
 		8C17720622CA4855007D54E0 /* ImageClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8C17720522CA4855007D54E0 /* ImageClassifier.mlmodel */; };
+		8C943B7E22CBAC9C00AF55A1 /* mycat.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 8C943B7D22CBAC9C00AF55A1 /* mycat.PNG */; };
+		8C943B8122CBACB700AF55A1 /* notmycat.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 8C943B8022CBACB700AF55A1 /* notmycat.PNG */; };
+		8C943B8222CBAD6F00AF55A1 /* mycat.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 8C943B7D22CBAC9C00AF55A1 /* mycat.PNG */; };
+		8C943B8322CBAD7200AF55A1 /* notmycat.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 8C943B8022CBACB700AF55A1 /* notmycat.PNG */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +42,8 @@
 		8C1771FA22CA4840007D54E0 /* MyCatMLTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCatMLTests.swift; sourceTree = "<group>"; };
 		8C1771FC22CA4840007D54E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C17720522CA4855007D54E0 /* ImageClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ImageClassifier.mlmodel; sourceTree = "<group>"; };
+		8C943B7D22CBAC9C00AF55A1 /* mycat.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mycat.PNG; sourceTree = "<group>"; };
+		8C943B8022CBACB700AF55A1 /* notmycat.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notmycat.PNG; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +85,7 @@
 		8C1771E422CA483E007D54E0 /* MyCatML */ = {
 			isa = PBXGroup;
 			children = (
+				8C943B7F22CBACA600AF55A1 /* Resource */,
 				8C17720522CA4855007D54E0 /* ImageClassifier.mlmodel */,
 				8C1771E522CA483E007D54E0 /* AppDelegate.swift */,
 				8C1771E722CA483E007D54E0 /* ViewController.swift */,
@@ -97,6 +104,15 @@
 				8C1771FC22CA4840007D54E0 /* Info.plist */,
 			);
 			path = MyCatMLTests;
+			sourceTree = "<group>";
+		};
+		8C943B7F22CBACA600AF55A1 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				8C943B8022CBACB700AF55A1 /* notmycat.PNG */,
+				8C943B7D22CBAC9C00AF55A1 /* mycat.PNG */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,7 +198,9 @@
 			files = (
 				8C1771F022CA4840007D54E0 /* LaunchScreen.storyboard in Resources */,
 				8C1771ED22CA4840007D54E0 /* Assets.xcassets in Resources */,
+				8C943B8122CBACB700AF55A1 /* notmycat.PNG in Resources */,
 				8C1771EB22CA483E007D54E0 /* Main.storyboard in Resources */,
+				8C943B7E22CBAC9C00AF55A1 /* mycat.PNG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +208,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C943B8322CBAD7200AF55A1 /* notmycat.PNG in Resources */,
+				8C943B8222CBAD6F00AF55A1 /* mycat.PNG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,7 +387,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 83FNZMQQ79;
 				INFOPLIST_FILE = MyCatML/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -386,7 +406,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 83FNZMQQ79;
 				INFOPLIST_FILE = MyCatML/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
